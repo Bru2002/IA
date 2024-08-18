@@ -22,7 +22,7 @@ def testar_algoritmo(algoritmo, nome, *args):
         print(f"Conflitos: {conflitos}")
         
         # Imprime evolução das métricas
-        print("Evolução das métricas:")
+        print("Evolução das métricas:") 
         for etapa in evolucao:
             print(f"  Iteração/Reinício: {etapa[0]}, Conflitos: {etapa[1]}")
         
@@ -40,6 +40,6 @@ def testar_algoritmo(algoritmo, nome, *args):
     print("-" * 40)
 
 # Testa os algoritmos sem limites definidos
-testar_algoritmo(subida_encosta.subida_encosta_reinicio_aleatorio, "Subida de Encosta com Reinício Aleatório")
-testar_algoritmo(tempera_simulada.tempera_simulada, "Tempera Simulada")
+#testar_algoritmo(subida_encosta.subida_encosta_reinicio_aleatorio, "Subida de Encosta com Reinício Aleatório")
+#testar_algoritmo(tempera_simulada.tempera_simulada, "Tempera Simulada")
 testar_algoritmo(genetico.algoritmo_genetico, "Algoritmo Genético")

@@ -13,13 +13,14 @@ def selecionar(populacao):
     # Adiciona-se 1 ao número de conflitos para evitar divisão por zero e para garantir 
     # que mesmo indivíduos com muitos conflitos tenham uma aptidão positiva.
     aptidoes = [1 / (conflito.conflito(individual) + 1) for individual in populacao]
-    total = sum(aptidoes)
-    probabilidade = [aptidao / total for aptidao in aptidoes]
-    selecionados = random.choices(populacao, probabilidade, k=2)
+    total = sum(aptidoes)#soma as aptidoes do grupo
+    probabilidade = [aptidao / total for aptidao in aptidoes] # considera a aptidao inicial div pela total para cada individuo
+    selecionados = random.choices(populacao, probabilidade, k=2) #seleciona  e retorna 2 com base na probabilidade
     return selecionados
 
 def cruzar(pai1, pai2):
     """Aplica o cruzamento entre dois pais."""
+    #sorteia 0-7
     ponto = random.randint(0, 7)
     filho1 = pai1[:ponto] + pai2[ponto:]
     filho2 = pai2[:ponto] + pai1[ponto:]
@@ -33,7 +34,7 @@ def mutar(individuo):
 
 def algoritmo_genetico(max_geracoes=1000):
     """Implementa o algoritmo genético e retorna a evolução das métricas e a melhor solução encontrada."""
-    populacao = gerar_populacao(100)
+    populacao = gerar_populacao(220)
     evolucao = []  # Inicializa uma lista evolucao para armazenar a qualidade das soluções ao longo das gerações.
     geracoes = 0 #contador de gerações.
     
